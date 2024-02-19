@@ -6,9 +6,9 @@ import { People } from '../model/people.model';
   providedIn: 'root'
 })
 export class PeopleListService {
-  constructor(private http: HttpClient) { }
-
   private peopleListUrl = 'https://swapi.dev/api/people?page=';
+
+  constructor(private http: HttpClient) { }
 
   getPeople(page: number) {
     return this.http.get<People>(this.peopleListUrl + page);
