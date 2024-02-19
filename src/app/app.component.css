@@ -1,0 +1,27 @@
+nav.navbar {
+  background-color: #000;
+  color: #ffe81f;
+}
+
+.navbar-menu .navbar-item {
+  color: #ffe81f;
+}
+
+.navbar-brand {
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: #ffe81f;
+  color: #000;
+}
+
+.navbar-brand>a.navbar-item {
+  background-color: #000;
+}
+
+.navbar-menu a.navbar-item:hover {
+  background-color: #282828;
+  color: #ffe81f;
+}
+
+a.navbar-item:focus {
+  background-color: initial;
+}

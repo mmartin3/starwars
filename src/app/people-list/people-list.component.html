@@ -1,0 +1,36 @@
+<div *ngIf="!people" class="block">
+  <app-progress-bar></app-progress-bar>
+</div>
+<table *ngIf="people" class="table is-striped is-bordered is-fullwidth">
+  <thead>
+    <tr>
+      <th class="details" title="View detailed information about this character"></th>
+      <th class="id" title="Character's number">#</th>
+      <th class="name" title="Character's name">Name</th>
+      <th class="gender" title="Character's gender">Gender</th>
+      <th class="films" title="Number of films in which the character appeared">Films</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people.results">
+      <td class="details">
+        <button class="button is-link" [routerLink]="[person.details]">
+          View More Details
+        </button>
+      </td>
+      <td class="id">{{ person.id }}</td>
+      <td class="name">{{ person.name }}</td>
+      <td class="gender">{{ person.gender }}</td>
+      <td class="films">{{ person.films.length }}</td>
+    </tr>
+  </tbody>
+</table>
+<nav class="pagination is-centered" role="navigation">
+  <a class="pagination-previous" [class.is-disabled]="currentPage == firstPage" (click)="goToPage(currentPage - 1)">Previous</a>
+  <a class="pagination-next" [class.is-disabled]="currentPage == lastPage" (click)="goToPage(currentPage + 1)">Next page</a>
+  <ul class="pagination-list">
+    <li *ngFor="let page of pages">
+      <a class="pagination-link" [class.is-current]="page == currentPage" (click)="goToPage(page)">{{ page }}</a>
+    </li>
+  </ul>
+</nav>

@@ -1,0 +1,46 @@
+<div class="block">
+  <app-list-link class="block"></app-list-link>
+</div>
+<div *ngIf="!details" class="block">
+  <app-progress-bar></app-progress-bar>
+</div>
+<div *ngIf="details" class="box">
+  <div class="columns">
+    <div class="column has-text-weight-bold is-2">Person:</div>
+    <div class="column">
+      {{ details.name }}
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column has-text-weight-bold is-2">Eye Color:</div>
+    <div class="column">
+      {{ details.eye_color }}
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column has-text-weight-bold is-2">Hair Color:</div>
+    <div class="column">
+      {{ details.hair_color }}
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column has-text-weight-bold is-2">Height:</div>
+    <div class="column">
+      {{ details.height }}
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column has-text-weight-bold is-2">Gender:</div>
+    <div class="column">
+      {{ details.gender }}
+    </div>
+  </div>
+  <div class="columns">
+    <div class="column has-text-weight-bold is-2">Films:</div>
+    <div class="column">
+      <ul>
+        <li *ngFor="let film of details.films">{{ film }}</li>
+      </ul>
+    </div>
+  </div>
+</div>

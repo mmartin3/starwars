@@ -1,0 +1,20 @@
+body {
+  overflow-x: auto;
+  overflow-y: hidden;
+}
+
+.button.is-link {
+  background-color: #000;
+  color: #ffe81f;
+}
+
+.button.is-link.is-hovered, .button.is-link:hover {
+  background-color: #282828;
+  color: #ffe81f;
+}
+
+.pagination-link.is-current {
+  background-color: #000;
+  border-color: #282828;
+  color: #ffe81f;
+}
